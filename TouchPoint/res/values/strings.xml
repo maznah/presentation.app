@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Touch Point</string>
+    <string name="action_settings">Settings</string>
+    <string name="action_exit">Exit</string><string name="title_tab_authoring">Edit</string>
+    <string name="title_tab_present">Presentation</string>
+    <string name="dlgExit">Exit</string>
+    <string name="dlgCancel">Cancel</string>
+    <string name="title_confirmation">Application will be closed! Please confirm:</string>
+    <string name="settingsGeneral">General settings</string>
+    <string name="settingsTitle_About">About program</string>
+    <string name="settingsDescription_About">About program description</string>
+    
+
+</resources>

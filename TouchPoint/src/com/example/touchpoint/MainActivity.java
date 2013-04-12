@@ -65,11 +65,19 @@ public class MainActivity extends FragmentActivity {
 
 		@Override
 		public Fragment getItem(int position) {
-			Fragment fragment = new TabFragment();
-			Bundle args = new Bundle();
-			args.putInt(TabFragment.ARG_SECTION_NUMBER, position + 1);
-			fragment.setArguments(args);
-			return fragment;
+			Fragment fragment = null;
+			
+			switch(position){
+			case 0:{
+				fragment = new EditorFragment();
+				return fragment;
+			}
+			case 1:{
+				fragment = new PresentationFragment();
+				return fragment;
+			}
+			}
+			return null;
 		}
 
 		@Override
@@ -90,19 +98,29 @@ public class MainActivity extends FragmentActivity {
 		}
 	}
 
-	public static class TabFragment extends Fragment {
-
-		public static final String ARG_SECTION_NUMBER = "section_number";
-
-		public TabFragment() {
+	public static class EditorFragment extends Fragment {
+		
+		public EditorFragment() {
 		}
 
 		@Override
 		public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState) {
-			View rootView = inflater.inflate(R.layout.fragment_main_dummy,container, false);
-			TextView dummyTextView = (TextView) rootView.findViewById(R.id.section_label);
-			dummyTextView.setText(Integer.toString(getArguments().getInt(ARG_SECTION_NUMBER)));
+			View rootView = inflater.inflate(R.layout.editor_layout,container, false);
+			
 			return rootView;
+		}
+	}
+	
+	public static class PresentationFragment extends Fragment {
+		
+		public PresentationFragment() {
+		}
+		
+		@Override
+		public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+			View rootView = inflater.inflate(R.layout.presentation_layout,container, false);
+			
+			return rootView; 
 		}
 	}
 	

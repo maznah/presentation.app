@@ -20,7 +20,7 @@
         		<category android:name="android.intent.category.LAUNCHER"></category>
     		</intent-filter>
 		</activity> 
-        <activity android:name="SettingsActivity"></activity><activity
+        <activity
             android:name="com.example.touchpoint.MainActivity"
             android:label="@string/app_name" >
             <intent-filter>

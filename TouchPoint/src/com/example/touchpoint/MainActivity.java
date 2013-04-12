@@ -9,14 +9,11 @@ import android.os.*;
 import android.support.v4.app.*;
 import android.support.v4.view.*;
 import android.view.*;
-import android.widget.*;
 
 public class MainActivity extends FragmentActivity {
 
 	SectionsPagerAdapter mSectionsPagerAdapter;
 	ViewPager mViewPager;
-	
-	private Settings appSettings = null;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -25,8 +22,6 @@ public class MainActivity extends FragmentActivity {
 		
 		getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 		
-		appSettings = new Settings("com.example.touchpoint");
-
 		mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
 		mViewPager = (ViewPager) findViewById(R.id.pager);
 		mViewPager.setAdapter(mSectionsPagerAdapter);
@@ -43,7 +38,7 @@ public class MainActivity extends FragmentActivity {
 	public boolean onOptionsItemSelected(MenuItem item) {
     	switch(item.getItemId()){
     	case R.id.menu_settings:
-    		showSettings();
+    		//showSettings();
     		return true;
     	case R.id.menu_exit:
     		doExit(this);
@@ -51,12 +46,7 @@ public class MainActivity extends FragmentActivity {
     	}
     	return super.onOptionsItemSelected(item);
 	}
-
-	private void showSettings() {
-		Intent showSettings = new Intent(this,SettingsActivity.class);
-		startActivity(showSettings);
-	}
-
+	
 	public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
 		public SectionsPagerAdapter(FragmentManager fm) {
@@ -165,11 +155,6 @@ public class MainActivity extends FragmentActivity {
 	protected void onPostCreate(Bundle savedInstanceState) {
 		super.onPostCreate(savedInstanceState);
 		delayedHide(100);
-	};
-	
-	protected void onResume() {
-		super.onResume();
-		if(appSettings!=null) appSettings.readSettings(this);
 	};
 	
     Handler mHideHandler = new Handler();

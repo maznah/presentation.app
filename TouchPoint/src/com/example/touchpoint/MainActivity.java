@@ -116,11 +116,11 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
 			switch (position) {
 			case 0:return getString(R.string.title_tab_presentations_list).toUpperCase(l);
 			case 1:return getString(R.string.title_tab_layout).toUpperCase(l);
-			case 2:return getString(R.string.title_tab_images).toUpperCase(l);
-			case 3:return getString(R.string.title_tab_audio).toUpperCase(l);
-			case 4:return getString(R.string.title_tab_video).toUpperCase(l);
-			case 5:return getString(R.string.title_tab_text).toUpperCase(l);
-			case 6:return getString(R.string.title_tab_button).toUpperCase(l);
+			case 2:return getString(R.string.title_tab_text).toUpperCase(l);
+			case 3:return getString(R.string.title_tab_images).toUpperCase(l);
+			case 4:return getString(R.string.title_tab_button).toUpperCase(l);
+			case 5:return getString(R.string.title_tab_audio).toUpperCase(l);
+			case 6:return getString(R.string.title_tab_video).toUpperCase(l);
 			}
 			return null;
 		}

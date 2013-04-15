@@ -68,9 +68,10 @@ public class EditorView extends SurfaceView implements SurfaceHolder.Callback {
 		paint.setARGB(255, 255, 255, 255);
 		canvas.drawRect(new Rect(0,0,viewWidth,viewHeight), paint);
 		
-		paint.setARGB(120, 0, 0, 255);
+		paint.setARGB(255, 204, 204, 204);
 		paint.setStrokeWidth(1);
-		canvas.drawLine(2, 2, 2, viewHeight-4, paint);
+		paint.setStyle(Paint.Style.STROKE);
+		canvas.drawRoundRect(new RectF(12,12,viewWidth-12,viewHeight-12), 10f , 10f, paint);
 	}
 
 	@Override

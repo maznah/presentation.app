@@ -2,8 +2,8 @@
 <resources>
     <string name="app_name">Touch Point</string>
     <string name="action_settings">Settings</string>
-    <string name="action_exit">Exit</string><string name="title_tab_layout">Select Layout</string>
-    <string name="title_tab_presentations_list">Presentations</string>
+    <string name="action_exit">Exit</string><string name="title_tab_layout">Create New</string>
+    <string name="title_tab_presentations_list">Open Existing</string>
     <string name="dlgExit">Exit</string>
     <string name="dlgCancel">Cancel</string>
     <string name="title_confirmation">Application will be closed! Please confirm:</string>

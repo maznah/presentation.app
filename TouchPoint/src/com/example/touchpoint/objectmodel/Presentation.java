@@ -2,14 +2,22 @@ package com.example.touchpoint.objectmodel;
 
 import java.io.*;
 import java.util.*;
+
+import com.example.touchpoint.Globals;
+
 import android.graphics.*;
 
 public class Presentation {
 	
+	private Globals global;
+	private PresentationManager host;
 	private String name = "New Presentation";
 	private List<Page> Pages = new ArrayList<Page>();
 	
-	public Presentation() {
+	public Presentation(PresentationManager manager) {
+		this.host = manager;
+		global = new Globals();
+		
 		Pages.add(new Page()); // add one page
 	}
 	
@@ -40,5 +48,11 @@ public class Presentation {
 	
 	public boolean Load(InputStream stream){
 		return false;
+	}
+
+	public void activate() {
+		if(host!=null){
+			global.currentPresentation = this;
+		}
 	}
 }

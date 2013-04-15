@@ -1,9 +1,6 @@
 package com.example.touchpoint;
 
 import java.util.Locale;
-
-import com.example.touchpoint.objectmodel.PresentationManager;
-
 import android.app.ActionBar;
 import android.app.ActionBar.Tab;
 import android.app.AlertDialog;
@@ -16,8 +13,6 @@ import android.support.v4.view.*;
 import android.view.*;
 
 public class MainActivity extends FragmentActivity implements ActionBar.TabListener {
-
-	public final PresentationManager presentations  = new PresentationManager(this);
 	
 	SectionsPagerAdapter mSectionsPagerAdapter;
 	ViewPager mViewPager;
@@ -26,6 +21,8 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main);
+		
+		Globals data = new Globals();
 		
 		final ActionBar actionBar = getActionBar();
 		actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
@@ -45,6 +42,8 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
 		for (int i = 0; i < mSectionsPagerAdapter.getCount(); i++) {
 			actionBar.addTab(actionBar.newTab().setText(mSectionsPagerAdapter.getPageTitle(i)).setTabListener(this));
 		}
+		
+		data.presentations.create(this).activate();
 	}
 
 	@Override

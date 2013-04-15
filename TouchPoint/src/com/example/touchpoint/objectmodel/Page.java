@@ -2,7 +2,6 @@ package com.example.touchpoint.objectmodel;
 
 import java.util.*;
 
-import com.example.touchpoint.PresentationElement;
 
 import android.graphics.*;
 
@@ -43,6 +42,19 @@ public class Page {
 	}
 	
 	protected void draw(Canvas canvas){
+		if(canvas!=null){
+
+			drawPageCover(canvas);
+			
+			if(elements!=null){
+				for(int i=0;i<elements.size();i++){
+					elements.get(i).draw(canvas);
+				}
+			}
+		}
+	}
+
+	private void drawPageCover(Canvas canvas) {
 		
 	}
 }

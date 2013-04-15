@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+<<<<<<< HEAD
   <color name="splash_background_color">#49abfd</color>
+=======
+  <color name="splash_background_color">#33b5e5</color>
+>>>>>>> 5e67b2149cb891a28c52dff79ae4742cd249cdef
 </resources>

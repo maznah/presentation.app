@@ -11,7 +11,11 @@
     <string name="settingsGeneral">General settings</string>
     <string name="settingsTitle_About">About program</string>
     <string name="settingsDescription_About">About program description</string>
+<<<<<<< HEAD
     <string name="app_copyright">Copyright 2013 Maznah Rasidi</string>
+=======
+    <string name="app_copyright">Copyright \u00A9 2013 by Maznah Rasidi</string>
+>>>>>>> 5e67b2149cb891a28c52dff79ae4742cd249cdef
     
 
 </resources>

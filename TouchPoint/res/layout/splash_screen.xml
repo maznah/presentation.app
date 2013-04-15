@@ -4,7 +4,11 @@
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
     android:background="@drawable/splash_style"
-    android:orientation="horizontal" >
+    android:clickable="false"
+    android:gravity="bottom"
+    android:orientation="horizontal"
+    android:paddingBottom="10dp"
+    android:textAlignment="center" >
 
     <TextView
         android:id="@+id/textView1"
@@ -15,7 +19,14 @@
         android:text="@string/app_name"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textColor="#fff"
+<<<<<<< HEAD
         android:textSize="82sp" />
+=======
+        android:textColorLink="#fff"
+        android:textSize="90sp"
+        android:textStyle="bold|italic"
+        android:typeface="serif" />
+>>>>>>> 5e67b2149cb891a28c52dff79ae4742cd249cdef
 
     <TextView
         android:id="@+id/textView2"
@@ -23,7 +34,16 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
+<<<<<<< HEAD
         android:paddingBottom="10dp"
         android:text="@string/app_copyright" />
+=======
+        android:layout_marginBottom="37dp"
+        android:autoLink="web"
+        android:clickable="true"
+        android:text="@string/app_copyright"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textColor="#fff" />
+>>>>>>> 5e67b2149cb891a28c52dff79ae4742cd249cdef
 
 </RelativeLayout>

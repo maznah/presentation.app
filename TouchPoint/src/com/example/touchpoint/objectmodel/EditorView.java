@@ -12,16 +12,34 @@ public class EditorView extends SurfaceView implements SurfaceHolder.Callback {
 	
 	public EditorView(Context context) {
 		super(context);
+		
+		this.setBackgroundColor(Color.WHITE);
+		
+		this.setDrawingCacheBackgroundColor(Color.WHITE);
+		this.setDrawingCacheEnabled(true);
+		this.setDrawingCacheQuality(DRAWING_CACHE_QUALITY_HIGH);
 		getHolder().addCallback(this);
 	}
 	
 	public EditorView(Context context, AttributeSet attrs) {
 		super(context,attrs);
+		
+		this.setBackgroundColor(Color.WHITE);
+		
+		this.setDrawingCacheBackgroundColor(Color.WHITE);
+		this.setDrawingCacheEnabled(true);
+		this.setDrawingCacheQuality(DRAWING_CACHE_QUALITY_HIGH);
 		getHolder().addCallback(this);
 	}
 	
 	public EditorView(Context context, AttributeSet attrs, int defStyle) {
 		super(context, attrs, defStyle);
+		
+		this.setBackgroundColor(Color.WHITE);
+		
+		this.setDrawingCacheBackgroundColor(Color.WHITE);
+		this.setDrawingCacheEnabled(true);
+		this.setDrawingCacheQuality(DRAWING_CACHE_QUALITY_HIGH);
 		getHolder().addCallback(this);
 	}
 

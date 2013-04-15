@@ -13,16 +13,34 @@ public class PresentationView extends SurfaceView implements SurfaceHolder.Callb
 	
 	public PresentationView(Context context) {
 		super(context);
+		
+		this.setBackgroundColor(Color.WHITE);
+		
+		this.setDrawingCacheBackgroundColor(Color.WHITE);
+		this.setDrawingCacheEnabled(true);
+		this.setDrawingCacheQuality(DRAWING_CACHE_QUALITY_HIGH);
 		getHolder().addCallback(this);
 	}
 	
 	public PresentationView(Context context, AttributeSet attrs) {
 		super(context,attrs);
+		
+		this.setBackgroundColor(Color.WHITE);
+		
+		this.setDrawingCacheBackgroundColor(Color.WHITE);
+		this.setDrawingCacheEnabled(true);
+		this.setDrawingCacheQuality(DRAWING_CACHE_QUALITY_HIGH);
 		getHolder().addCallback(this);
 	}
 	
 	public PresentationView(Context context, AttributeSet attrs, int defStyle) {
 		super(context, attrs, defStyle);
+		
+		this.setBackgroundColor(Color.WHITE);
+				
+		this.setDrawingCacheBackgroundColor(Color.WHITE);
+		this.setDrawingCacheEnabled(true);
+		this.setDrawingCacheQuality(DRAWING_CACHE_QUALITY_HIGH);
 		getHolder().addCallback(this);
 	}
 

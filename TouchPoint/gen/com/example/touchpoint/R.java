@@ -28,16 +28,15 @@ public final class R {
         public static final int splash_style=0x7f020001;
     }
     public static final class id {
-        public static final int RelativeLayout=0x7f0a0005;
-        public static final int menu_exit=0x7f0a0009;
-        public static final int menu_settings=0x7f0a0008;
+        public static final int RelativeLayout=0x7f0a0004;
+        public static final int menu_exit=0x7f0a0008;
+        public static final int menu_settings=0x7f0a0007;
         public static final int objectList=0x7f0a0001;
         public static final int pager=0x7f0a0002;
-        public static final int pager_title_strip=0x7f0a0003;
         public static final int paint=0x7f0a0000;
-        public static final int textView1=0x7f0a0006;
-        public static final int textView2=0x7f0a0007;
-        public static final int viewer=0x7f0a0004;
+        public static final int textView1=0x7f0a0005;
+        public static final int textView2=0x7f0a0006;
+        public static final int viewer=0x7f0a0003;
     }
     public static final class layout {
         public static final int editor_layout=0x7f030000;
@@ -59,8 +58,13 @@ public final class R {
         public static final int settingsGeneral=0x7f070008;
         public static final int settingsTitle_About=0x7f070009;
         public static final int title_confirmation=0x7f070007;
-        public static final int title_tab_authoring=0x7f070003;
-        public static final int title_tab_present=0x7f070004;
+        public static final int title_tab_audio=0x7f07000d;
+        public static final int title_tab_button=0x7f070010;
+        public static final int title_tab_images=0x7f07000c;
+        public static final int title_tab_layout=0x7f070003;
+        public static final int title_tab_presentations_list=0x7f070004;
+        public static final int title_tab_text=0x7f07000f;
+        public static final int title_tab_video=0x7f07000e;
     }
     public static final class style {
         /** 

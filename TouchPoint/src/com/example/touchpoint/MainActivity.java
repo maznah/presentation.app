@@ -2,15 +2,18 @@ package com.example.touchpoint;
 
 import java.util.Locale;
 import android.annotation.SuppressLint;
+import android.app.ActionBar;
+import android.app.ActionBar.Tab;
 import android.app.AlertDialog;
 import android.app.AlertDialog.Builder;
+import android.app.FragmentTransaction;
 import android.content.*;
 import android.os.*;
 import android.support.v4.app.*;
 import android.support.v4.view.*;
 import android.view.*;
 
-public class MainActivity extends FragmentActivity {
+public class MainActivity extends FragmentActivity implements ActionBar.TabListener {
 
 	SectionsPagerAdapter mSectionsPagerAdapter;
 	ViewPager mViewPager;
@@ -20,12 +23,24 @@ public class MainActivity extends FragmentActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main);
 		
+		final ActionBar actionBar = getActionBar();
+		actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
+		
 		getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 		
 		mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
 		mViewPager = (ViewPager) findViewById(R.id.pager);
 		mViewPager.setAdapter(mSectionsPagerAdapter);
-
+		
+		mViewPager.setOnPageChangeListener(new ViewPager.SimpleOnPageChangeListener() {
+			@Override
+			public void onPageSelected(int position) {
+				actionBar.setSelectedNavigationItem(position);
+			}
+		});	
+		for (int i = 0; i < mSectionsPagerAdapter.getCount(); i++) {
+			actionBar.addTab(actionBar.newTab().setText(mSectionsPagerAdapter.getPageTitle(i)).setTabListener(this));
+		}
 	}
 
 	@Override
@@ -59,30 +74,53 @@ public class MainActivity extends FragmentActivity {
 			
 			switch(position){
 			case 0:{
-				fragment = new EditorFragment();
-				return fragment;
-			}
-			case 1:{
 				fragment = new PresentationFragment();
 				return fragment;
 			}
+			case 1:{
+				fragment = new EditorFragment();
+				return fragment;
+			}
+			case 2:{
+				fragment = new EditorFragment();
+				return fragment;
+			}
+			case 3:{
+				fragment = new EditorFragment();
+				return fragment;
+			}
+			case 4:{
+				fragment = new EditorFragment();
+				return fragment;
+			}
+			case 5:{
+				fragment = new EditorFragment();
+				return fragment;
+			}
+			case 6:{
+				fragment = new EditorFragment();
+				return fragment;
+			}	
 			}
 			return null;
 		}
 
 		@Override
 		public int getCount() {
-			return 2;
+			return 7;
 		}
 
 		@Override
 		public CharSequence getPageTitle(int position) {
 			Locale l = Locale.getDefault();
 			switch (position) {
-			case 0:
-				return getString(R.string.title_tab_authoring).toUpperCase(l);
-			case 1:
-				return getString(R.string.title_tab_present).toUpperCase(l);
+			case 0:return getString(R.string.title_tab_presentations_list).toUpperCase(l);
+			case 1:return getString(R.string.title_tab_layout).toUpperCase(l);
+			case 2:return getString(R.string.title_tab_images).toUpperCase(l);
+			case 3:return getString(R.string.title_tab_audio).toUpperCase(l);
+			case 4:return getString(R.string.title_tab_video).toUpperCase(l);
+			case 5:return getString(R.string.title_tab_text).toUpperCase(l);
+			case 6:return getString(R.string.title_tab_button).toUpperCase(l);
 			}
 			return null;
 		}
@@ -170,4 +208,17 @@ public class MainActivity extends FragmentActivity {
         mHideHandler.removeCallbacks(mHideRunnable);
         mHideHandler.postDelayed(mHideRunnable, delayMillis);
     }
+
+	@Override
+	public void onTabReselected(Tab tab, FragmentTransaction ft) {	
+	}
+
+	@Override
+	public void onTabSelected(Tab tab, FragmentTransaction ft) {
+		mViewPager.setCurrentItem(tab.getPosition());
+	}
+
+	@Override
+	public void onTabUnselected(Tab tab, FragmentTransaction ft) {
+	}
 }

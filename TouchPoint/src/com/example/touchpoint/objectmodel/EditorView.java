@@ -7,11 +7,11 @@ import android.view.*;
 
 public class EditorView extends SurfaceView implements SurfaceHolder.Callback {
 
-	private Canvas canvas;
 	private int viewWidth, viewHeight; 
 	
 	public EditorView(Context context) {
 		super(context);
+		setWillNotDraw(false);
 		
 		this.setBackgroundColor(Color.WHITE);
 		
@@ -23,6 +23,7 @@ public class EditorView extends SurfaceView implements SurfaceHolder.Callback {
 	
 	public EditorView(Context context, AttributeSet attrs) {
 		super(context,attrs);
+		setWillNotDraw(false);
 		
 		this.setBackgroundColor(Color.WHITE);
 		
@@ -34,6 +35,7 @@ public class EditorView extends SurfaceView implements SurfaceHolder.Callback {
 	
 	public EditorView(Context context, AttributeSet attrs, int defStyle) {
 		super(context, attrs, defStyle);
+		setWillNotDraw(false);
 		
 		this.setBackgroundColor(Color.WHITE);
 		
@@ -47,22 +49,28 @@ public class EditorView extends SurfaceView implements SurfaceHolder.Callback {
 	public void surfaceChanged(SurfaceHolder holder, int format, int width, int height) {
 		viewWidth = width;
 		viewHeight = height;
-		
-		canvas = holder.lockCanvas();
-		
-		if(canvas!=null){
-			Paint paint = new Paint();
-			paint.setAntiAlias(true);
-			paint.setStyle(Paint.Style.FILL);
-			paint.setARGB(255, 255, 255, 255);
-			canvas.drawRect(new Rect(0,0,viewWidth,viewHeight), paint);
-		}
-		
-		holder.unlockCanvasAndPost(canvas);
 	}
 
 	@Override
 	public void surfaceCreated(SurfaceHolder holder) {
+	}
+	
+	@Override
+	protected void onDraw(Canvas canvas) {
+		super.onDraw(canvas);
+		if(canvas!=null) customDraw(canvas);
+	}
+
+	private void customDraw(Canvas canvas) {
+		Paint paint = new Paint();
+		paint.setAntiAlias(true);
+		paint.setStyle(Paint.Style.FILL);
+		paint.setARGB(255, 255, 255, 255);
+		canvas.drawRect(new Rect(0,0,viewWidth,viewHeight), paint);
+		
+		paint.setARGB(120, 0, 0, 255);
+		paint.setStrokeWidth(1);
+		canvas.drawLine(2, 2, 2, viewHeight-4, paint);
 	}
 
 	@Override

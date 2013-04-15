@@ -25,6 +25,7 @@
         android:layout_height="fill_parent"
         android:layout_alignParentLeft="true"
         android:layout_alignTop="@+id/paint"
+        android:gravity="left"
         android:numColumns="2" >
 
     </GridView>

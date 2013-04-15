@@ -1,7 +1,9 @@
 package com.example.touchpoint;
 
 import java.util.Locale;
-import android.annotation.SuppressLint;
+
+import com.example.touchpoint.objectmodel.PresentationManager;
+
 import android.app.ActionBar;
 import android.app.ActionBar.Tab;
 import android.app.AlertDialog;
@@ -15,6 +17,8 @@ import android.view.*;
 
 public class MainActivity extends FragmentActivity implements ActionBar.TabListener {
 
+	public final PresentationManager presentations  = new PresentationManager(this);
+	
 	SectionsPagerAdapter mSectionsPagerAdapter;
 	ViewPager mViewPager;
 
@@ -134,7 +138,6 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
 		@Override
 		public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState) {
 			View rootView = inflater.inflate(R.layout.editor_layout,container, false);
-			
 			return rootView;
 		}
 	}
@@ -147,7 +150,6 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
 		@Override
 		public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 			View rootView = inflater.inflate(R.layout.presentation_layout,container, false);
-			
 			return rootView; 
 		}
 	}
@@ -189,25 +191,6 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
 		dialog.setCanceledOnTouchOutside(true);
 		dialog.show();
 	}
-	
-	protected void onPostCreate(Bundle savedInstanceState) {
-		super.onPostCreate(savedInstanceState);
-		delayedHide(100);
-	};
-	
-    Handler mHideHandler = new Handler();
-    Runnable mHideRunnable = new Runnable() {
-		@SuppressLint("InlinedApi")
-		@Override
-        public void run() {
-			mViewPager.findViewById(R.id.pager).setSystemUiVisibility(View.SYSTEM_UI_FLAG_LOW_PROFILE | View.SYSTEM_UI_FLAG_FULLSCREEN);
-        }
-    };
-
-    private void delayedHide(int delayMillis) {
-        mHideHandler.removeCallbacks(mHideRunnable);
-        mHideHandler.postDelayed(mHideRunnable, delayMillis);
-    }
 
 	@Override
 	public void onTabReselected(Tab tab, FragmentTransaction ft) {	
@@ -221,4 +204,8 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
 	@Override
 	public void onTabUnselected(Tab tab, FragmentTransaction ft) {
 	}
+	
+	protected void onPostCreate(Bundle savedInstanceState) {
+		super.onPostCreate(savedInstanceState);
+	};
 }

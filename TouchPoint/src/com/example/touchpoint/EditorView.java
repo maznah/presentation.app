@@ -1,4 +1,4 @@
-package com.example.touchpoint.objectmodel;
+package com.example.touchpoint;
 
 import android.content.*;
 import android.graphics.*;
@@ -68,10 +68,11 @@ public class EditorView extends SurfaceView implements SurfaceHolder.Callback {
 		paint.setARGB(255, 255, 255, 255);
 		canvas.drawRect(new Rect(0,0,viewWidth,viewHeight), paint);
 		
-		paint.setARGB(255, 204, 204, 204);
+		paint.setARGB(230, 204, 204, 204);
 		paint.setStrokeWidth(1);
 		paint.setStyle(Paint.Style.STROKE);
 		canvas.drawRoundRect(new RectF(12,12,viewWidth-12,viewHeight-12), 10f , 10f, paint);
+		
 	}
 
 	@Override

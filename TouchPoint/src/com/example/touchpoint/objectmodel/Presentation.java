@@ -10,9 +10,13 @@ import android.graphics.*;
 public class Presentation {
 	
 	private Globals global;
+	private Canvas canvas = null;
+	
 	private PresentationManager host;
 	private String name = "New Presentation";
 	private List<Page> Pages = new ArrayList<Page>();
+	private int viewWidth = 0;
+	private int viewHeight = 0;
 	
 	public Presentation(PresentationManager manager) {
 		this.host = manager;
@@ -54,5 +58,11 @@ public class Presentation {
 		if(host!=null){
 			global.currentPresentation = this;
 		}
+	}
+
+	public void draw(Canvas canvas, int viewWidth, int viewHeight) {
+		this.canvas = canvas;
+		this.viewWidth = viewWidth;
+		this.viewHeight = viewHeight;
 	}
 }

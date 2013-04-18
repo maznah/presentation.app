@@ -8,6 +8,7 @@ import android.view.*;
 public class EditorView extends SurfaceView implements SurfaceHolder.Callback {
 
 	private int viewWidth, viewHeight; 
+	private Globals global = new Globals();
 	
 	public EditorView(Context context) {
 		super(context);
@@ -59,6 +60,12 @@ public class EditorView extends SurfaceView implements SurfaceHolder.Callback {
 	protected void onDraw(Canvas canvas) {
 		super.onDraw(canvas);
 		if(canvas!=null) customDraw(canvas);
+		
+		if(global!=null && canvas!=null){
+			if(global.currentPresentation!=null){
+				global.currentPresentation.draw(canvas,viewWidth,viewHeight);
+			}
+		}
 	}
 
 	private void customDraw(Canvas canvas) {

@@ -1,4 +1,5 @@
-package com.example.touchpoint.objectmodel;
+package com.example.touchpoint;
+
 
 import android.content.*;
 import android.graphics.*;

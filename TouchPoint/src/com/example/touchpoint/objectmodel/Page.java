@@ -55,6 +55,16 @@ public class Page {
 	}
 
 	private void drawPageCover(Canvas canvas) {
-		
+		if(canvas!=null){
+			
+			Paint paint = new Paint();
+			paint.setAntiAlias(true);
+			paint.setStyle(Paint.Style.FILL);
+			paint.setARGB(150,0,0,200);
+			
+			canvas.drawRect(new Rect(),paint);
+			
+			
+		}
 	}
 }
